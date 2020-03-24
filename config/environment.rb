@@ -47,6 +47,7 @@ end
 
 class MusicLibraryController
 
+<<<<<<< HEAD
   def initialize(path='./db/mp3s')
     newImporter = MusicImporter.new(path)
     Song.all << newImporter.import
@@ -160,6 +161,20 @@ class MusicLibraryController
     end
   end
 
+=======
+  attr_accessor :path
+  
+  def initialize(path = "./db/mp3s")
+    musicimporter = MusicImporter.new(path)
+    musicimporter.import
+  end
+  
+  def call
+    puts "Welcome to your music library!"
+    puts "To list all of your songs, enter 'list songs'."
+  end
+  
+>>>>>>> 6aab7516dba14ccd3a35639666fce5f3a388c7c1
 end
 
 
